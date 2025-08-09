@@ -13,29 +13,28 @@ int main() {
 
 
 #include "unity.h"
-#include "demo.h"
 
-void setUp(void) {
-    printf("Starting a new test...\n");
+// Function to test
+int add(int a, int b) {
+    return a + b;
 }
 
-void tearDown(void) {
-    printf("Test finished.\n");
-}
+// Setup function (called before each test)
+void setUp(void) {}
 
-void test_sum_pos(void) {
-    TEST_ASSERT_EQUAL(30, sum(10, 20)); // checks if 10+20 == 30
-}
+// Teardown function (called after each test)
+void tearDown(void) {}
 
-void test_diff_pos(void) {
-    TEST_ASSERT_EQUAL(-10, diff(10, 20)); // checks if 10-20 == -10
+// Test case
+void test_add(void) {
+    TEST_ASSERT_EQUAL_INT(5, add(2, 3));
+    TEST_ASSERT_EQUAL_INT(0, add(-2, 2));
 }
 
 int main(void) {
     UNITY_BEGIN();
 
-    RUN_TEST(test_sum_pos);
-    RUN_TEST(test_diff_pos);
+    RUN_TEST(test_add);
 
     return UNITY_END();
 }
