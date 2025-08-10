@@ -1,4 +1,6 @@
 #include "demo.h"
-int diff(int a, int b) {
+
+int difference(int a, int b) {
     return a - b;
 }
+
